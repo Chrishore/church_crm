@@ -6,6 +6,7 @@ export async function GET() {
         { name: "Week 2", value: 1500 },
         { name: "Week 3", value: 800 },
         { name: "Week 4", value: 1900 },
+        { name: "Week 5", value: 1400 },
     ];
     return NextResponse.json(data);
 }
