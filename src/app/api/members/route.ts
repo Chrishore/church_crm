@@ -222,8 +222,27 @@ const members = [
         classification: "Member",
         role: "Deacon",
     },
+    {
+        id: 21,
+        firstName: "Robin",
+        lastName: "edward",
+        email: "robin.w@church.org",
+        homePhone: "",
+        cellPhone: "666-7777",
+        gender: "Male",
+        classification: "visitor",
+        role: "security team",
+    },
 ];
 
 export async function GET() {
     return NextResponse.json(members);
+}
+
+// POST new member
+export async function POST(req: Request) {
+    const data = await req.json();
+    const newMember = { id: Date.now(), ...data };
+    members.push(newMember);
+    return NextResponse.json({ message: "Member added", member: newMember });
 }

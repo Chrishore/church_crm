@@ -1,13 +1,15 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const options = {
     gender: ["Male", "Female", "Unassigned"],
     classification: ["Member", "Visitor", "Unassigned"],
-    role: ["Admin", "Usher", "Member"],
+    role: ["Admin", "Usher", "Member", "Security Team"],
 };
 
 export default function FilterBar({ onFilterChange }: { onFilterChange: (filters: any) => void }) {
+    const router = useRouter();
     const [filters, setFilters] = useState({
         gender: "",
         classification: "",
@@ -74,6 +76,12 @@ export default function FilterBar({ onFilterChange }: { onFilterChange: (filters
                     className="border border-gray-400 rounded px-3 py-2 hover:bg-gray-100"
                 >
                     Clear Filter
+                </button>
+                <button
+                    onClick={() => router.push("/members/add")}
+                    className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg"
+                >
+                    + Add Member
                 </button>
             </div>
         </div>
