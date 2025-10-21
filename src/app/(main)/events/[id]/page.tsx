@@ -21,10 +21,11 @@ interface Params {
 
 // 2. Data Fetching Function (Server-side)
 async function getEvent(id: string): Promise<EventItem | null> {
-    const apiUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
-    const res = await fetch(`${apiUrl}/api/events/${id}`, {
-        cache: 'no-store'
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL ?? ''}/api/events/${id}`, {
+        cache: 'no-store',
+        next: { revalidate: 0 }
     });
+
 
     if (!res.ok) {
         return null;
