@@ -80,9 +80,9 @@ export default function LoginPage() {
   return (
     <>
       <Toaster position="top-right" />
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="max-w-md w-full bg-white rounded-lg shadow-md p-8">
-          <h1 className="text-2xl font-bold text-center mb-6 text-gray-800">
+      <div className="min-h-screen flex items-center justify-center bg-white dark:bg-[#0f172a]">
+        <div className="max-w-md w-full bg-white dark:bg-surface rounded-lg shadow-md p-8">
+          <h1 className="text-2xl font-bold text-center mb-6 text-textPrimary dark:text-[#f1f5f9]">
             Church CRM Login
           </h1>
 
@@ -90,7 +90,7 @@ export default function LoginPage() {
             <div>
               <label
                 htmlFor="username"
-                className="block text-sm font-medium text-gray-700 mb-1"
+                className="block text-sm font-medium text-textSecondary dark:text-[#cbd5e1] mb-1"
               >
                 Username
               </label>
@@ -101,7 +101,7 @@ export default function LoginPage() {
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-[#c7d2fe] dark:border-[#334155] rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-[#1e293b] text-textPrimary dark:text-[#f1f5f9]"
                 disabled={isOnCooldown}
               />
             </div>
@@ -109,7 +109,7 @@ export default function LoginPage() {
             <div>
               <label
                 htmlFor="password"
-                className="block text-sm font-medium text-gray-700 mb-1"
+                className="block text-sm font-medium text-textSecondary dark:text-[#cbd5e1] mb-1"
               >
                 Password
               </label>
@@ -120,13 +120,13 @@ export default function LoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-[#c7d2fe] dark:border-[#334155] rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-[#1e293b] text-textPrimary dark:text-[#f1f5f9]"
                 disabled={isOnCooldown}
               />
             </div>
 
             {error && (
-              <div className="text-sm text-red-600">
+              <div className="text-sm text-red-600 dark:text-red-400">
                 {error}
               </div>
             )}
@@ -134,15 +134,15 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={isLoading || isOnCooldown}
-              className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors font-medium"
+              className="w-full bg-primary text-white py-2 px-4 rounded-md hover:bg-secondary disabled:bg-gray-400 dark:disabled:bg-gray-600 disabled:cursor-not-allowed transition-colors font-medium"
             >
               {isLoading ? 'Signing in...' : 'Sign In'}
             </button>
           </form>
 
           {isOnCooldown && cooldownMessage && (
-            <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded-md">
-              <p className="text-sm text-yellow-800">{cooldownMessage}</p>
+            <div className="mt-4 p-3 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-700 rounded-md">
+              <p className="text-sm text-yellow-800 dark:text-yellow-200">{cooldownMessage}</p>
             </div>
           )}
         </div>
