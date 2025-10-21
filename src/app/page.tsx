@@ -1,4 +1,5 @@
-import Image from "next/image";
+import { redirect } from "next/navigation";
+
 export default function Home() {
-  return <div>Home page works!</div>;
+  redirect("/dashboard");
 }
