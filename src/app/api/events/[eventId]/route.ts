@@ -35,9 +35,9 @@ const MOCK_EVENTS: EventItem[] = [
 export async function GET(
     request: Request,
     // The eventId is available in the params object
-    { params }: { params: { eventId: string } }
+    context: { params: Promise<{ eventId: string }> }
 ) {
-    const eventId = params.eventId;
+    const { eventId } = await context.params;
 
     // 1. Find the event
     const event = MOCK_EVENTS.find(e => e.id === eventId);

@@ -15,6 +15,10 @@ interface EventItem {
     description: string;
 }
 
+interface Params {
+    id: string;
+}
+
 // 2. Data Fetching Function (Server-side)
 async function getEvent(id: string): Promise<EventItem | null> {
     const apiUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
@@ -29,11 +33,11 @@ async function getEvent(id: string): Promise<EventItem | null> {
 }
 
 // 3. Server Component Page Function
-export default async function EventPage({ params }: { params: { id: string } }) {
+export default async function EventPage(props: { params: Promise<Params> }) {
 
     // Access params.id directly here—it's safe and recommended in a Server Component
-    const event = await getEvent(params.id);
-
+    const { id } = await props.params; // unwrap the promise manually
+    const event = await getEvent(id);
     if (!event) {
         return notFound();
     }
