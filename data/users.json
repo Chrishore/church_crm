@@ -1,0 +1,14 @@
+[
+  {
+    "username": "admin",
+    "passwordHash": "789e7036e68004c49bd8bf59ceda07f6.3accefb7012ba9e6b570f2a0c5a81aa2813b41c58095eef80eccd5814b87047b84c2da6012ad9198b89192157b22f09b368f4488f7d763a7696a735e9780f144"
+  },
+  {
+    "username": "pastor",
+    "passwordHash": "0c10c9135bfdb45c0a939e55bf9cad5a.9f3bda94ae6790f1d395f0e9b6af56339c0ee3b8496f5cc2433573f4aebd59d91eaa82656d30c01a47915e2d1bd1efb6de063dcc0d841dda63bd60670f72a9ef"
+  },
+  {
+    "username": "staff",
+    "passwordHash": "0624f4f13aadd5fef29039fb1b5a6f75.cbc9112b688b775c52c9cd8483dab528b33abac8035b9a1f27b0a75ef5a33134909def83ffb358940be1c3e9849ef8764893b92d625843a64e8a6b3c4b12b2aa"
+  }
+]
