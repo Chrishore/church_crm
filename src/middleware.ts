@@ -23,7 +23,6 @@ export const config = {
   matcher: [
     '/dashboard/:path*',
     '/members/:path*',
-    '/calendar/:path*',
     '/events/:path*',
   ],
 };
