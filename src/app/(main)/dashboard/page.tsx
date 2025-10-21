@@ -71,14 +71,14 @@ export default function DashboardPage() {
         <div className="flex w-full min-h-screen">
             <div className="flex flex-col flex-1">
                 <main className="p-6 space-y-6">
-                    <div className="grid md:grid-cols-4 gap-6">
-                        <StatCard title="Families" value={stats.families} color="bg-green-600" />
-                        <StatCard title="People" value={stats.people} color="bg-green-500" />
-                        <StatCard title="Groups" value={stats.groups} color="bg-red-500" />
-                        <StatCard title="Sunday School" value={stats.sundaySchool} color="bg-orange-400" />
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                        <StatCard title="Families" value={stats.families} color="primary" />
+                        <StatCard title="People" value={stats.people} color="secondary" />
+                        <StatCard title="Groups" value={stats.groups} color="accent" />
+                        <StatCard title="Sunday School" value={stats.sundaySchool} color="primary" />
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                         <BirthdaysTable title="Today's Birthdays" data={birthdays} />
                         <BirthdaysTable title="Today's Wedding Anniversaries" data={anniversaries} isAnniversary />
                     </div>
