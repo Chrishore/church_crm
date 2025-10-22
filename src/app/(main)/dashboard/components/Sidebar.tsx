@@ -55,16 +55,15 @@ export default function Sidebar({ mobileOpen = false, onMobileClose }: SidebarPr
                     ${collapsed ? "w-20" : "w-64 md:w-64"}
                 `}
                     style={{
-                        backgroundColor: 'var(--color-surface)',
-                        color: 'var(--color-textPrimary)'
+                        backgroundColor: 'var(--color-surface)'
                     }}
                 >
                     {/* Header */}
                     <div className="flex items-center justify-between p-4 border-b border-border">
-                        {!collapsed && <h1 className="text-xl font-bold">ChurchCRM</h1>}
+                        {!collapsed && <h1 className="text-xl font-bold text-textPrimary">ChurchCRM</h1>}
                         <button
                             onClick={() => setCollapsed(!collapsed)}
-                            className="p-2 rounded-lg hover:opacity-80 transition-colors"
+                            className="p-2 rounded-lg hover:opacity-80 transition-colors text-textPrimary"
                         >
                             {collapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
                         </button>
