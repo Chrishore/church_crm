@@ -81,7 +81,7 @@ export default function Sidebar({ mobileOpen = false, onMobileClose }: SidebarPr
                                     onClick={() => onMobileClose?.()}
                                     className={`flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-200 ease-in-out ${active
                                         ? "bg-primary text-white"
-                                        : "text-textSecondary dark:text-[#cbd5e1] hover:bg-surface dark:hover:bg-[#334155] hover:text-textPrimary dark:hover:text-[#f1f5f9] hover:translate-x-1"
+                                        : "text-textSecondary hover:bg-surface hover:text-textPrimary hover:translate-x-1"
                                         }`}
                                 >
                                     <Icon size={20} />
