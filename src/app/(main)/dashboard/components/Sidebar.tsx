@@ -32,7 +32,7 @@ export default function Sidebar({ mobileOpen = false, onMobileClose }: SidebarPr
             {mobileOpen && (
                 <div
                     onClick={onMobileClose}
-                    className="fixed inset-0 bg-black/50 z-20 md:hidden"
+                    className="fixed inset-0 bg-black/70 z-20 md:hidden"
                 />
             )}
 
@@ -42,29 +42,29 @@ export default function Sidebar({ mobileOpen = false, onMobileClose }: SidebarPr
                 {mobileOpen && (
                     <div
                         onClick={onMobileClose}
-                        className="fixed inset-0 bg-black/50 z-20 md:hidden"
+                        className="fixed inset-0 bg-black/70 z-20 md:hidden"
                     />
                 )}
                 {/* Sidebar */}
                 <aside
                     className={`
-                    h-screen flex flex-col transition-all duration-300
-                    md:relative md:translate-x-0
-                    fixed top-0 left-0 z-30
-                    ${mobileOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
-                    ${collapsed ? "w-20" : "w-64 md:w-64"}
-                `}
-                    style={{
-                        backgroundColor: 'var(--color-surface)',
-                        color: 'var(--color-textPrimary)'
-                    }}
+                        h-screen flex flex-col transition-all duration-300
+                        md:relative md:translate-x-0
+                        fixed top-0 left-0 z-30
+                        ${mobileOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
+                        ${collapsed ? "w-20" : "w-64 md:w-64"}
+                        bg-surface md:bg-surface/95 md:backdrop-blur-md border-r border-border
+                        shadow-lg
+                    `}
                 >
+
+
                     {/* Header */}
                     <div className="flex items-center justify-between p-4 border-b border-border">
-                        {!collapsed && <h1 className="text-xl font-bold">ChurchCRM</h1>}
+                        {!collapsed && <h1 className="text-xl font-bold text-textPrimary">ChurchCRM</h1>}
                         <button
                             onClick={() => setCollapsed(!collapsed)}
-                            className="p-2 rounded-lg hover:opacity-80 transition-colors"
+                            className="p-2 rounded-lg hover:opacity-80 transition-colors text-textPrimary"
                         >
                             {collapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
                         </button>
@@ -81,7 +81,7 @@ export default function Sidebar({ mobileOpen = false, onMobileClose }: SidebarPr
                                     onClick={() => onMobileClose?.()}
                                     className={`flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-200 ease-in-out ${active
                                         ? "bg-primary text-white"
-                                        : "text-textSecondary dark:text-[#cbd5e1] hover:bg-surface dark:hover:bg-[#334155] hover:text-textPrimary dark:hover:text-[#f1f5f9] hover:translate-x-1"
+                                        : "text-textSecondary hover:bg-surface hover:text-textPrimary hover:translate-x-1"
                                         }`}
                                 >
                                     <Icon size={20} />

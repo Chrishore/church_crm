@@ -65,13 +65,12 @@ export default function PublicNavbar({ onDonateClick }: PublicNavbarProps) {
           {/* Backdrop */}
           <div
             onClick={closeMobileMenu}
-            className="fixed inset-0 bg-black/50 z-10 md:hidden"
+            className="fixed inset-0 bg-black/70 z-10 md:hidden"
           />
 
           {/* Drawer from LEFT */}
           <div 
-            className="fixed left-0 top-0 h-full w-[280px] text-white z-20 md:hidden shadow-2xl transform transition-transform duration-300"
-            style={{ backgroundColor: 'var(--color-surface)' }}
+            className="fixed left-0 top-0 h-full w-[280px] bg-primary text-white z-20 md:hidden shadow-2xl transform transition-transform duration-300"
           >
             {/* Header */}
             <div className="p-5 flex justify-between items-center border-b border-border">
