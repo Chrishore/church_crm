@@ -4,10 +4,11 @@ import { useState } from 'react';
 import Link from 'next/link';
 import PublicNavbar from '@/components/PublicNavbar';
 import DonateModal from '@/components/DonateModal';
+import Image from 'next/image'
 
 export default function Home() {
   const [donateModalOpen, setDonateModalOpen] = useState(false);
-
+  const imageSrc = "/landing/2.jpg";
   return (
     <div className="min-h-screen" style={{ backgroundColor: 'var(--color-bg-main)' }}>
       {/* Public Navigation */}
@@ -43,8 +44,14 @@ export default function Home() {
 
         {/* Right Side - Visual */}
         <div className="flex-1 h-48 md:h-[500px] bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white text-center px-4">
-          <div className="text-lg md:text-xl opacity-75">
-            [Church Image / Cross / Stained Glass]
+          <div className="relative w-full h-full">
+            <Image
+              src={imageSrc}
+              alt="Church Image"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
         </div>
       </div>
@@ -87,9 +94,9 @@ export default function Home() {
       </div>
 
       {/* Donate Modal */}
-      <DonateModal 
-        isOpen={donateModalOpen} 
-        onClose={() => setDonateModalOpen(false)} 
+      <DonateModal
+        isOpen={donateModalOpen}
+        onClose={() => setDonateModalOpen(false)}
       />
     </div>
   );
