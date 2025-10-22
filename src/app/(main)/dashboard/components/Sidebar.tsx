@@ -37,53 +37,65 @@ export default function Sidebar({ mobileOpen = false, onMobileClose }: SidebarPr
             )}
 
             {/* Sidebar */}
-            <aside
-                className={`
-                    h-screen bg-white dark:bg-[#1e293b] text-textPrimary dark:text-[#f1f5f9] flex flex-col transition-all duration-300
+            <>
+                {/* Mobile Backdrop */}
+                {mobileOpen && (
+                    <div
+                        onClick={onMobileClose}
+                        className="fixed inset-0 bg-black/50 z-20 md:hidden"
+                    />
+                )}
+                {/* Sidebar */}
+                <aside
+                    className={`
+                    h-screen flex flex-col transition-all duration-300
                     md:relative md:translate-x-0
                     fixed top-0 left-0 z-30
                     ${mobileOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
                     ${collapsed ? "w-20" : "w-64 md:w-64"}
                 `}
-            >
-                {/* Header */}
-                <div className="flex items-center justify-between p-4 border-b border-border dark:border-[#334155]">
-                    {!collapsed && <h1 className="text-xl font-bold">ChurchCRM</h1>}
-                    <button
-                        onClick={() => setCollapsed(!collapsed)}
-                        className="p-2 rounded-lg hover:bg-surface dark:hover:bg-[#334155] transition-colors"
-                    >
-                        {collapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
-                    </button>
-                </div>
+                    style={{
+                        backgroundColor: 'var(--color-surface)',
+                        color: 'var(--color-textPrimary)'
+                    }}
+                >
+                    {/* Header */}
+                    <div className="flex items-center justify-between p-4 border-b border-border">
+                        {!collapsed && <h1 className="text-xl font-bold">ChurchCRM</h1>}
+                        <button
+                            onClick={() => setCollapsed(!collapsed)}
+                            className="p-2 rounded-lg hover:opacity-80 transition-colors"
+                        >
+                            {collapsed ? <ChevronRight size={20} /> : <ChevronLeft size={20} />}
+                        </button>
+                    </div>
 
-                {/* Navigation */}
-                <nav className="flex-1 p-2 space-y-1">
-                    {navItems.map(({ name, href, icon: Icon }) => {
-                        const active = pathname.startsWith(href);
-                        return (
-                            <Link
-                                key={href}
-                                href={href}
-                                onClick={() => onMobileClose?.()}
-                                className={`flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-200 ease-in-out ${
-                                    active
+                    {/* Navigation */}
+                    <nav className="flex-1 p-2 space-y-1">
+                        {navItems.map(({ name, href, icon: Icon }) => {
+                            const active = pathname.startsWith(href);
+                            return (
+                                <Link
+                                    key={href}
+                                    href={href}
+                                    onClick={() => onMobileClose?.()}
+                                    className={`flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-200 ease-in-out ${active
                                         ? "bg-primary text-white"
                                         : "text-textSecondary dark:text-[#cbd5e1] hover:bg-surface dark:hover:bg-[#334155] hover:text-textPrimary dark:hover:text-[#f1f5f9] hover:translate-x-1"
-                                }`}
-                            >
-                                <Icon size={20} />
-                                {!collapsed && <span>{name}</span>}
-                            </Link>
-                        );
-                    })}
-                </nav>
-
-                {/* Footer */}
-                <div className="p-4 text-xs text-textSecondary dark:text-[#cbd5e1] opacity-60 border-t border-border dark:border-[#334155]">
-                    {!collapsed && <span>v1.0.0</span>}
-                </div>
-            </aside>
+                                        }`}
+                                >
+                                    <Icon size={20} />
+                                    {!collapsed && <span>{name}</span>}
+                                </Link>
+                            );
+                        })}
+                    </nav>
+                    {/* Footer */}
+                    <div className="p-4 text-xs text-textSecondary opacity-60 border-t border-border">
+                        {!collapsed && <span>v1.0.0</span>}
+                    </div>
+                </aside>
+            </>
         </>
     );
 }

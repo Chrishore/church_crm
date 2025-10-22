@@ -80,9 +80,9 @@ export default function LoginPage() {
   return (
     <>
       <Toaster position="top-right" />
-      <div className="min-h-screen flex items-center justify-center bg-white dark:bg-[#0f172a]">
-        <div className="max-w-md w-full bg-white dark:bg-surface rounded-lg shadow-md p-8">
-          <h1 className="text-2xl font-bold text-center mb-6 text-textPrimary dark:text-[#f1f5f9]">
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: 'var(--color-bg-main)' }}>
+        <div className="max-w-md w-full bg-surface rounded-lg shadow-md p-8">
+          <h1 className="text-2xl font-bold text-center mb-6" style={{ color: 'var(--color-textPrimary)' }}>
             Church CRM Login
           </h1>
 

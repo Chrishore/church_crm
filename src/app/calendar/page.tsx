@@ -45,13 +45,13 @@ export default function CalendarPage() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-white dark:bg-[#0f172a]">
+        <div className="min-h-screen" style={{ backgroundColor: 'var(--color-bg-main)' }}>
             {/* Public Navigation */}
             <PublicNavbar onDonateClick={() => setDonateModalOpen(true)} />
 
             <div className="p-4 md:p-6">
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
-                    <h1 className="text-2xl md:text-3xl font-bold text-textPrimary dark:text-[#f1f5f9]">
+                    <h1 className="text-2xl md:text-3xl font-bold" style={{ color: 'var(--color-textPrimary)' }}>
                         Church Events Calendar
                     </h1>
 
@@ -63,8 +63,8 @@ export default function CalendarPage() {
                             Go to Dashboard
                         </Link>
                     ) : (
-                        <div className="text-sm text-textSecondary dark:text-[#cbd5e1]">
-                            <Link href="/login" className="text-primary dark:text-accent hover:underline font-medium">
+                        <div className="text-sm text-textSecondary">
+                            <Link href="/login" className="text-accent hover:underline font-medium">
                                 Login
                             </Link>
                             {" "}to manage events
@@ -72,7 +72,10 @@ export default function CalendarPage() {
                     )}
                 </div>
 
-                <div className="bg-white dark:bg-surface p-4 rounded-xl shadow-lg border border-border dark:border-[#334155]">
+                <div 
+                    className="p-4 rounded-xl shadow-lg border border-border"
+                    style={{ backgroundColor: 'var(--color-surface)' }}
+                >
                     <FullCalendar
                         plugins={[dayGridPlugin]}
                         initialView="dayGridMonth"
@@ -96,10 +99,10 @@ export default function CalendarPage() {
                 </div>
 
                 {!isAuthenticated && (
-                    <div className="mt-4 p-4 bg-surface dark:bg-[#1e293b] border border-border dark:border-[#334155] rounded-lg text-center">
-                        <p className="text-textSecondary dark:text-[#cbd5e1] text-sm">
+                    <div className="mt-4 p-4 bg-surface border border-border rounded-lg text-center">
+                        <p className="text-textSecondary text-sm">
                             Viewing calendar in read-only mode.
-                            <Link href="/login" className="text-primary dark:text-accent hover:underline font-medium ml-1">
+                            <Link href="/login" className="text-accent hover:underline font-medium ml-1">
                                 Login
                             </Link>
                             {" "}to add or manage events.

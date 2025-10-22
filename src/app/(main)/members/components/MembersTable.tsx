@@ -51,20 +51,29 @@ export default function MembersTable({ filters }: { filters: any }) {
     };
 
     return (
-        <div className="bg-white dark:bg-surface rounded-lg shadow-lg border border-border dark:border-[#334155] p-4">
+        <div
+            className="rounded-lg shadow-lg border border-border p-4"
+            style={{ backgroundColor: 'var(--color-surface)' }}
+        >
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-4">
-                <h2 className="text-lg font-semibold text-textPrimary dark:text-[#f1f5f9]">Member Listing</h2>
+                <h2 className="text-lg font-semibold" style={{ color: 'var(--color-textPrimary)' }}>
+                    Member Listing
+                </h2>
                 <input
                     placeholder="Search..."
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
-                    className="border border-border dark:border-[#334155] p-2 rounded w-full sm:w-48 bg-white dark:bg-[#1e293b] text-textPrimary dark:text-[#f1f5f9]"
+                    className="border border-border p-2 rounded w-full sm:w-48"
+                    style={{
+                        backgroundColor: 'var(--color-bg-main)',
+                        color: 'var(--color-textPrimary)'
+                    }}
                 />
             </div>
             <div className="overflow-x-auto">
                 <table className="w-full border-collapse text-sm">
                     <thead>
-                        <tr className="bg-surface dark:bg-[#1e293b]">
+                        <tr style={{ backgroundColor: 'var(--color-surface)' }}>
                             {[
                                 "Last Name",
                                 "First Name",
@@ -78,7 +87,8 @@ export default function MembersTable({ filters }: { filters: any }) {
                                     onClick={() =>
                                         handleSort(col.toLowerCase().replace(" ", "") as keyof Member)
                                     }
-                                    className="p-2 border border-border dark:border-[#334155] cursor-pointer hover:bg-[#e0e7ff] dark:hover:bg-[#334155] text-textPrimary dark:text-[#f1f5f9] transition-colors"
+                                    className="p-2 border border-border cursor-pointer hover:opacity-80 transition-colors"
+                                    style={{ color: 'var(--color-textPrimary)' }}
                                 >
                                     {col}
                                     {sortKey === col.toLowerCase().replace(" ", "") && (
@@ -90,18 +100,52 @@ export default function MembersTable({ filters }: { filters: any }) {
                     </thead>
                     <tbody>
                         {filtered.map((m) => (
-                            <tr key={m.id} className="hover:bg-surface dark:hover:bg-[#334155] transition-colors">
-                                <td className="border border-border dark:border-[#334155] p-2 text-textPrimary dark:text-[#f1f5f9]">{m.lastName}</td>
-                                <td className="border border-border dark:border-[#334155] p-2 text-textPrimary dark:text-[#f1f5f9]">{m.firstName}</td>
-                                <td className="border border-border dark:border-[#334155] p-2 text-textSecondary dark:text-[#cbd5e1]">{m.email}</td>
-                                <td className="border border-border dark:border-[#334155] p-2 text-textSecondary dark:text-[#cbd5e1]">{m.gender}</td>
-                                <td className="border border-border dark:border-[#334155] p-2 text-textSecondary dark:text-[#cbd5e1]">{m.classification}</td>
-                                <td className="border border-border dark:border-[#334155] p-2 text-textSecondary dark:text-[#cbd5e1]">{m.role}</td>
+                            <tr key={m.id} className="hover:opacity-80 transition-colors">
+                                <td
+                                    className="border border-border p-2"
+                                    style={{ color: 'var(--color-textPrimary)' }}
+                                >
+                                    {m.lastName}
+                                </td>
+                                <td
+                                    className="border border-border p-2"
+                                    style={{ color: 'var(--color-textPrimary)' }}
+                                >
+                                    {m.firstName}
+                                </td>
+                                <td
+                                    className="border border-border p-2"
+                                    style={{ color: 'var(--color-textSecondary)' }}
+                                >
+                                    {m.email}
+                                </td>
+                                <td
+                                    className="border border-border p-2"
+                                    style={{ color: 'var(--color-textSecondary)' }}
+                                >
+                                    {m.gender}
+                                </td>
+                                <td
+                                    className="border border-border p-2"
+                                    style={{ color: 'var(--color-textSecondary)' }}
+                                >
+                                    {m.classification}
+                                </td>
+                                <td
+                                    className="border border-border p-2"
+                                    style={{ color: 'var(--color-textSecondary)' }}
+                                >
+                                    {m.role}
+                                </td>
                             </tr>
                         ))}
                         {filtered.length === 0 && (
                             <tr>
-                                <td colSpan={6} className="p-4 text-center text-textSecondary dark:text-[#cbd5e1]">
+                                <td
+                                    colSpan={6}
+                                    className="p-4 text-center"
+                                    style={{ color: 'var(--color-textSecondary)' }}
+                                >
                                     No matching records found.
                                 </td>
                             </tr>

@@ -69,9 +69,12 @@ export default function PublicNavbar({ onDonateClick }: PublicNavbarProps) {
           />
 
           {/* Drawer from LEFT */}
-          <div className="fixed left-0 top-0 h-full w-[280px] bg-[#1e293b] text-white z-20 md:hidden shadow-2xl transform transition-transform duration-300">
+          <div 
+            className="fixed left-0 top-0 h-full w-[280px] text-white z-20 md:hidden shadow-2xl transform transition-transform duration-300"
+            style={{ backgroundColor: 'var(--color-surface)' }}
+          >
             {/* Header */}
-            <div className="p-5 flex justify-between items-center border-b border-gray-700">
+            <div className="p-5 flex justify-between items-center border-b border-border">
               <h2 className="text-lg font-bold">Navigation</h2>
               <button
                 onClick={closeMobileMenu}
@@ -87,7 +90,7 @@ export default function PublicNavbar({ onDonateClick }: PublicNavbarProps) {
               <Link
                 href="/calendar"
                 onClick={closeMobileMenu}
-                className="px-4 py-3 rounded-md hover:bg-gray-700 transition-colors"
+                className="px-4 py-3 rounded-md hover:opacity-80 transition-colors"
               >
                 Calendar
               </Link>
@@ -96,14 +99,14 @@ export default function PublicNavbar({ onDonateClick }: PublicNavbarProps) {
                   closeMobileMenu();
                   onDonateClick();
                 }}
-                className="px-4 py-3 rounded-md hover:bg-gray-700 transition-colors text-left"
+                className="px-4 py-3 rounded-md hover:opacity-80 transition-colors text-left"
               >
                 Donate
               </button>
               <Link
                 href="/login"
                 onClick={closeMobileMenu}
-                className="px-4 py-3 rounded-md hover:bg-gray-700 transition-colors"
+                className="px-4 py-3 rounded-md hover:opacity-80 transition-colors"
               >
                 Member Login
               </Link>

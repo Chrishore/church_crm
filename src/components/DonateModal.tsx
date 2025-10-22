@@ -38,7 +38,8 @@ export default function DonateModal({ isOpen, onClose }: DonateModalProps) {
       {/* Modal Container */}
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative max-w-[500px] w-full bg-white dark:bg-[#1e293b] rounded-xl shadow-2xl"
+        className="relative max-w-[500px] w-full rounded-xl shadow-2xl"
+        style={{ backgroundColor: 'var(--color-surface)' }}
         role="dialog"
         aria-modal="true"
         aria-labelledby="donate-modal-title"
@@ -66,10 +67,10 @@ export default function DonateModal({ isOpen, onClose }: DonateModalProps) {
         <div className="px-6 py-6">
           {/* Info Section */}
           <div className="mb-6">
-            <h3 className="text-primary dark:text-accent text-base font-semibold mb-2">
+            <h3 className="text-accent text-base font-semibold mb-2">
               Make a Donation
             </h3>
-            <p className="text-textSecondary dark:text-[#cbd5e1] text-sm leading-relaxed">
+            <p className="text-textSecondary text-sm leading-relaxed">
               Thank you for your interest in supporting our church. Your contributions help us continue our mission and serve our community with love and compassion.
             </p>
           </div>
@@ -77,32 +78,41 @@ export default function DonateModal({ isOpen, onClose }: DonateModalProps) {
           {/* Payment Methods */}
           <div className="flex flex-col md:flex-row gap-3 mb-5">
             {/* Online Payment Button */}
-            <button className="flex-1 bg-surface dark:bg-[#1e293b] border-2 border-border dark:border-[#334155] rounded-lg p-4 hover:bg-[#e0e7ff] dark:hover:bg-[#334155] transition-colors text-left">
-              <div className="font-semibold text-primary dark:text-accent mb-1">
+            <button 
+              className="flex-1 border-2 border-border rounded-lg p-4 hover:opacity-80 transition-colors text-left"
+              style={{ backgroundColor: 'var(--color-bg-main)' }}
+            >
+              <div className="font-semibold text-accent mb-1">
                 Online Payment
               </div>
-              <div className="text-sm text-textSecondary dark:text-[#cbd5e1]">
+              <div className="text-sm text-textSecondary">
                 Via PayPal or Card
               </div>
             </button>
 
             {/* Bank Transfer Button */}
-            <button className="flex-1 bg-surface dark:bg-[#1e293b] border-2 border-border dark:border-[#334155] rounded-lg p-4 hover:bg-[#e0e7ff] dark:hover:bg-[#334155] transition-colors text-left">
-              <div className="font-semibold text-primary dark:text-accent mb-1">
+            <button 
+              className="flex-1 border-2 border-border rounded-lg p-4 hover:opacity-80 transition-colors text-left"
+              style={{ backgroundColor: 'var(--color-bg-main)' }}
+            >
+              <div className="font-semibold text-accent mb-1">
                 Bank Transfer
               </div>
-              <div className="text-sm text-textSecondary dark:text-[#cbd5e1]">
+              <div className="text-sm text-textSecondary">
                 Direct deposit
               </div>
             </button>
           </div>
 
           {/* Contact Info */}
-          <div className="bg-surface dark:bg-[#1e293b] border border-border dark:border-[#334155] rounded-lg p-4">
-            <div className="font-semibold text-textPrimary dark:text-[#f1f5f9] text-sm mb-2">
+          <div 
+            className="border border-border rounded-lg p-4"
+            style={{ backgroundColor: 'var(--color-bg-main)' }}
+          >
+            <div className="font-semibold text-sm mb-2" style={{ color: 'var(--color-textPrimary)' }}>
               Other Ways to Give
             </div>
-            <div className="text-textSecondary dark:text-[#cbd5e1] text-xs leading-relaxed space-y-1">
+            <div className="text-textSecondary text-xs leading-relaxed space-y-1">
               <div>[Church Address]</div>
               <div>Email: donations@church.org</div>
               <div>Phone: (555) 123-4567</div>

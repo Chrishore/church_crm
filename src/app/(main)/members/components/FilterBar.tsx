@@ -30,7 +30,10 @@ export default function FilterBar({ onFilterChange }: { onFilterChange: (filters
     };
 
     return (
-        <div className="bg-white dark:bg-surface rounded-lg shadow-lg border border-border dark:border-[#334155] mb-6">
+        <div
+            className="rounded-lg shadow-lg border border-border mb-6"
+            style={{ backgroundColor: 'var(--color-surface)' }}
+        >
             <div className="bg-primary text-white px-4 py-2 font-semibold rounded-t-lg">
                 Filter and Cart
             </div>
@@ -39,7 +42,11 @@ export default function FilterBar({ onFilterChange }: { onFilterChange: (filters
                     name="gender"
                     value={filters.gender}
                     onChange={handleChange}
-                    className="border border-border dark:border-[#334155] p-2 rounded bg-white dark:bg-[#1e293b] text-textPrimary dark:text-[#f1f5f9]"
+                    className="border border-border p-2 rounded"
+                    style={{
+                        backgroundColor: 'var(--color-bg-main)',
+                        color: 'var(--color-textPrimary)'
+                    }}
                 >
                     <option value="">Select Gender</option>
                     {options.gender.map((g) => (
@@ -51,7 +58,11 @@ export default function FilterBar({ onFilterChange }: { onFilterChange: (filters
                     name="classification"
                     value={filters.classification}
                     onChange={handleChange}
-                    className="border border-border dark:border-[#334155] p-2 rounded bg-white dark:bg-[#1e293b] text-textPrimary dark:text-[#f1f5f9]"
+                    className="border border-border p-2 rounded"
+                    style={{
+                        backgroundColor: 'var(--color-bg-main)',
+                        color: 'var(--color-textPrimary)'
+                    }}
                 >
                     <option value="">Select Classification</option>
                     {options.classification.map((c) => (
@@ -63,7 +74,11 @@ export default function FilterBar({ onFilterChange }: { onFilterChange: (filters
                     name="role"
                     value={filters.role}
                     onChange={handleChange}
-                    className="border border-border dark:border-[#334155] p-2 rounded bg-white dark:bg-[#1e293b] text-textPrimary dark:text-[#f1f5f9]"
+                    className="border border-border p-2 rounded"
+                    style={{
+                        backgroundColor: 'var(--color-bg-main)',
+                        color: 'var(--color-textPrimary)'
+                    }}
                 >
                     <option value="">Select Role</option>
                     {options.role.map((r) => (
@@ -73,7 +88,8 @@ export default function FilterBar({ onFilterChange }: { onFilterChange: (filters
 
                 <button
                     onClick={clearFilters}
-                    className="border border-border dark:border-[#334155] rounded px-3 py-2 hover:bg-surface dark:hover:bg-[#334155] text-textPrimary dark:text-[#f1f5f9] transition-colors"
+                    className="border border-border rounded px-3 py-2 hover:opacity-80 transition-colors"
+                    style={{ color: 'var(--color-textPrimary)' }}
                 >
                     Clear Filter
                 </button>

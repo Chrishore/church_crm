@@ -10,11 +10,14 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
 
     return (
         <div className="flex h-screen">
-            <Sidebar 
-                mobileOpen={mobileMenuOpen} 
-                onMobileClose={() => setMobileMenuOpen(false)} 
+            <Sidebar
+                mobileOpen={mobileMenuOpen}
+                onMobileClose={() => setMobileMenuOpen(false)}
             />
-            <div className="flex-1 flex flex-col bg-surface dark:bg-[#0f172a]">
+            <div
+                className="flex-1 flex flex-col"
+                style={{ backgroundColor: 'var(--color-bg-main)' }}
+            >
                 <Navbar onMenuClick={() => setMobileMenuOpen(true)} />
                 <main className="flex-1 overflow-y-auto p-6">
                     {children}
