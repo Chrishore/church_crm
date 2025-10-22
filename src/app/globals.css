@@ -22,6 +22,7 @@
   --color-textPrimary: #f1f5f9;
   --color-textSecondary: #cbd5e1;
   --color-border: #334155;
+  --color-bg-main: #0f172a;
 }
 
 @theme {
