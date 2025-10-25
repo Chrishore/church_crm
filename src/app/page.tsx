@@ -61,7 +61,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {/* Card 1 */}
-            <div style={{ backgroundColor: 'var(--color-bg-main)' }} className="border border-border rounded-lg p-5 md:p-8">
+            <div style={{ backgroundColor: 'var(--color-bg-main)' }} className="border border-border rounded-lg p-5 md:p-8 transition-all duration-300 ease-in-out hover:scale-105 shadow-md hover:shadow-xl focus-visible:scale-105">
               <h3 className="text-accent font-semibold text-base mb-2">
                 Weekly Services
               </h3>
@@ -71,7 +71,7 @@ export default function Home() {
             </div>
 
             {/* Card 2 */}
-            <div style={{ backgroundColor: 'var(--color-bg-main)' }} className="border border-border rounded-lg p-5 md:p-8">
+            <div style={{ backgroundColor: 'var(--color-bg-main)' }} className="border border-border rounded-lg p-5 md:p-8 transition-all duration-300 ease-in-out hover:scale-105 shadow-md hover:shadow-xl focus-visible:scale-105">
               <h3 className="text-accent font-semibold text-base mb-2">
                 Community
               </h3>
@@ -81,7 +81,7 @@ export default function Home() {
             </div>
 
             {/* Card 3 */}
-            <div style={{ backgroundColor: 'var(--color-bg-main)' }} className="border border-border rounded-lg p-5 md:p-8">
+            <div style={{ backgroundColor: 'var(--color-bg-main)' }} className="border border-border rounded-lg p-5 md:p-8 transition-all duration-300 ease-in-out hover:scale-105 shadow-md hover:shadow-xl focus-visible:scale-105">
               <h3 className="text-accent font-semibold text-base mb-2">
                 Get Involved
               </h3>
