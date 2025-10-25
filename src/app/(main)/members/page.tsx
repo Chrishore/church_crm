@@ -20,28 +20,6 @@ export default function MembersPage() {
     return (
         <div className="p-6">
             <h1 className="text-2xl font-bold mb-4">Person Listing</h1>
-            {/* <div className="mb-6">
-                <table className="data-table">
-                    <thead>
-                        <tr>
-                            {columns.map((column) => (
-                                // Capitalize the first letter for a nice header
-                                <th key={column}>{column.charAt(0).toUpperCase() + column.slice(1)}</th>
-                            ))}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {data.map((row) => (
-                            <tr key={row.id}>
-                                {columns.map((column) => (
-                                    <td key={column}>{row[column]}</td>
-                                ))}
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-
-            </div> */}
             <FilterBar onFilterChange={setFilters} />
             <MembersTable filters={filters} />
         </div>
